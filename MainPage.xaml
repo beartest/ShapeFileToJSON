@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="geometry_json_translate.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="600" d:DesignWidth="1280" 
+    xmlns:esri="http://schemas.esri.com/arcgis/client/2009" 
+    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" 
+    xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
+    xmlns:custom="clr-namespace:geometry_json_translate">
+
+    <Grid x:Name="LayoutRoot" Background="#D5000000">
+        <Grid.Resources>
+            <esri:SimpleFillSymbol x:Name="DefaultFillSymbol" Fill="Purple" BorderBrush="Yellow" BorderThickness="2"/>
+            <esri:SimpleMarkerSymbol x:Name="DefaultMarkerSymbol" Color="LightCyan" Size="12" Style="Diamond"/>
+            <esri:SimpleLineSymbol x:Name="DefaultLineSymbol" Color="YellowGreen" Width="4"/>
+        </Grid.Resources>
+        <Canvas HorizontalAlignment="Left" Margin="12,12,0,12" Name="canvas1" Width="430" >
+            <Rectangle Canvas.Left="0" Canvas.Top="0" Height="576" Name="rectangle1" Width="430" Fill="#FF494949" RadiusX="15" RadiusY="15" Margin="0" />
+            <Rectangle Canvas.Left="35" Canvas.Top="28" Height="30" Name="rectangle4" Stroke="Gray" StrokeThickness="1" Width="113" Fill="#77919191" RadiusX="8" RadiusY="8" MouseEnter="rectangle4_MouseEnter" MouseLeave="rectangle4_MouseLeave">
+                <Rectangle.Effect>
+                    <DropShadowEffect/>
+                </Rectangle.Effect>
+            </Rectangle>
+            <TextBlock Canvas.Left="35" Canvas.Top="28" Height="30" Name="textBlock1" Text="Saveshapefile" Foreground="Gainsboro" FontWeight="Black" Width="113" FontSize="12" MouseEnter="textBlock1_MouseEnter" Margin="7,7,0,0" />
+            <TextBlock Canvas.Left="170" Canvas.Top="28" Height="30" Name="textBlock2" Text="同时选择.dbf和.shp文件" Foreground="LightGray" FontWeight="Normal" Width="200" FontSize="16" Margin="7,7,0,0" FontFamily="Arial" FontStretch="Normal" />
+            <Rectangle Canvas.Left="20" Canvas.Top="82" Height="475" Name="rectangle5" Stroke="Gray" StrokeThickness="1" Width="388" Fill="#77919191" RadiusX="8" RadiusY="8">
+                <Rectangle.Effect>
+                    <DropShadowEffect/>
+                </Rectangle.Effect>
+            </Rectangle>
+            <sdk:Label Canvas.Left="76" Canvas.Top="160" Height="15" Name="label1" Width="52" Content="DBName" Foreground="Snow" />
+            <sdk:Label Canvas.Left="76" Canvas.Top="234" Height="15" Name="label2" Width="61" Content="TableName" Foreground="Snow" />
+            <TextBox Canvas.Left="158" Canvas.Top="156" Height="23" Name="textBox1" Width="166" />
+            <TextBox Canvas.Left="158" Canvas.Top="230" Height="23" Name="textBox2" Width="166" />
+            <Button Canvas.Left="158" Canvas.Top="303" Content="打开" Height="23" Name="button1" Width="75" Click="button1_Click" />
+            <Button Canvas.Left="158" Canvas.Top="362" Content="建表" Height="23" Name="button2" Width="75" Click="button2_Click" />
+            <Button Canvas.Left="158" Canvas.Top="419" Height="23" Name="button3" Width="75" Content="保存属性" Click="button3_Click" />
+        </Canvas>
+    </Grid>
+</UserControl>
